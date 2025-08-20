@@ -21,7 +21,10 @@ const app = new Elysia()
           role: 'user',
           content: `
           Analiza este diff y genera 3 commits descriptivos siguiendo conventional commits.
-          El formato esperado en la respuesta es JSON y UNICAMENTE JSON, nada de texto extra. Cada commit debe tener título y descripción.
+          El formato esperado en la respuesta es JSON y UNICAMENTE JSON, nada de texto extra.
+          La estructura aceptada en el JSON es la siguiente:
+          [{"title": "type(scope): descripción", "description": "descripcion detallada"}, ...]
+          Cada commit debe tener título con el tipo de commit (feat, chore, fix, etc) y una descripcion detallada.
           Diff: ${diff}`
         }
       ]
